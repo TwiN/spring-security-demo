@@ -30,7 +30,6 @@ public class ViewController {
 	
 	/*@GetMapping("/login")
 	public String customLogin() {
-		System.out.println("hi");
 		return "customlogin";
 	}*/
 	
