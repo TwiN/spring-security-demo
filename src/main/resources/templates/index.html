@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
 </head>
 <body>
     This is the index page.
-    Logged user: <span sec:authentication="name"></span>
-
+    <br />
+    Logged user: <span th:text="${user.name}"></span>
 </body>
 </html>
