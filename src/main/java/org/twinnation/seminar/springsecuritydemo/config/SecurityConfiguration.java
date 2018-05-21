@@ -21,26 +21,25 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.httpBasic()
-				.and()
-			.authorizeRequests().anyRequest().authenticated()
+		http.httpBasic();
+			//	.and()
+			//.authorizeRequests().anyRequest().authenticated()
 			//	.and()
 			//.formLogin()
 			//	.and()
 			//.oauth2Login()
-				.and()
-			.logout()
-				.permitAll()
-				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-				.invalidateHttpSession(true)
-				.clearAuthentication(true)
-				.deleteCookies("JSESSIONID")
-				.and()
-			.formLogin()
-				.loginPage("/login")
-				.defaultSuccessUrl("/", true)
-				.permitAll();
-			
+			//	.and()
+			//.logout()
+			//	.permitAll()
+			//	.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+			//	.invalidateHttpSession(true)
+			//	.clearAuthentication(true)
+			//	.deleteCookies("JSESSIONID")
+			//	.and()
+			//.formLogin()
+			//	.loginPage("/login")
+			//	.defaultSuccessUrl("/", true)
+			//	.permitAll();
 	}
 	
 	
@@ -58,4 +57,5 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
+	
 }
