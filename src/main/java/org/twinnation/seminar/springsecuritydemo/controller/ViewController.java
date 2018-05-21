@@ -20,7 +20,7 @@ public class ViewController {
 	
 	
 	@GetMapping("/admin")
-	//@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ModelAndView admin(Principal principal) {
 		ModelAndView modelAndView = new ModelAndView("admin");
 		modelAndView.addObject("user", principal);
@@ -28,9 +28,9 @@ public class ViewController {
 	}
 	
 	
-	/*@GetMapping("/login")
+	@GetMapping("/login")
 	public String customLogin() {
 		return "customlogin";
-	}*/
+	}
 	
 }

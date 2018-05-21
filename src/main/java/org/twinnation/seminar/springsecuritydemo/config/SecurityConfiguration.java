@@ -21,24 +21,26 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		//http
-			//.authorizeRequests().anyRequest().authenticated()
-			//	.and()
-			//.formLogin()
-			//	.and()
-			//.oauth2Login()
-			//	.and()
-			//.logout()
-			//	.permitAll()
-			//	.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-			//	.invalidateHttpSession(true)
-			//	.clearAuthentication(true)
-			//	.deleteCookies("JSESSIONID")
-			//	.and()
-			//.formLogin()
-			//	.loginPage("/login")
-			//	.defaultSuccessUrl("/", true)
-			//	.permitAll();
+		//http.httpBasic()
+		//		.and()
+		//	.authorizeRequests()
+		//		.anyRequest().authenticated()
+		//		.and()
+		//	.formLogin()
+		//		.and()
+		//	.logout()
+		//		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+		//		.invalidateHttpSession(true)
+		//		.clearAuthentication(true)
+		//		.deleteCookies("JSESSIONID")
+		//		.permitAll()
+		//		.and()
+		//	.oauth2Login()
+		//		.and()
+		//	.formLogin()
+		//		.loginPage("/login")
+		//		.defaultSuccessUrl("/", true)
+		//		.permitAll();
 	}
 	
 	
