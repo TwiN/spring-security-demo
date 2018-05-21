@@ -27,4 +27,11 @@ public class ViewController {
 		return modelAndView;
 	}
 	
+	
+	@GetMapping("/login")
+	public String customLogin() {
+		System.out.println("hi");
+		return "customlogin";
+	}
+	
 }

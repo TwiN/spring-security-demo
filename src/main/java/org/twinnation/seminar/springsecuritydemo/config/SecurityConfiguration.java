@@ -21,18 +21,26 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http
+		http.httpBasic()
+				.and()
 			.authorizeRequests().anyRequest().authenticated()
-			.and()
-			.formLogin()
-			.and()
-			.oauth2Login()
-			.and()
+			//	.and()
+			//.formLogin()
+			//	.and()
+			//.oauth2Login()
+				.and()
 			.logout()
+				.permitAll()
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 				.invalidateHttpSession(true)
 				.clearAuthentication(true)
-				.deleteCookies("JSESSIONID");
+				.deleteCookies("JSESSIONID")
+				.and()
+			.formLogin()
+				.loginPage("/login")
+				.defaultSuccessUrl("/", true)
+				.permitAll();
+			
 	}
 	
 	
@@ -41,7 +49,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		auth
 			.inMemoryAuthentication()
 			.withUser("user").password(passwordEncoder().encode("user")).roles("USER")
-			.and()
+				.and()
 			.withUser("admin").password(passwordEncoder().encode("admin")).roles("ADMIN");
 	}
 	
