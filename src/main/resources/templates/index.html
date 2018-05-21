@@ -7,7 +7,7 @@
 <body>
     This is the index page.
     <br />
-    Logged user: <span th:text="${user.name}"></span>
+    Logged user: <span th:if="${user} != null" th:text="${user.name}"></span>
     <br />
     <a href="/logout">logout</a>
 </body>
